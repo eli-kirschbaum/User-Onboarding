@@ -4,6 +4,15 @@ import React, { useState } from 'react'
 
 export default function Form(props) {
 
+    const {
+        values,
+        submit,
+        change,
+        disabled,
+        errors
+    } = props
+
+
     const onSubmit = evt => {
         evt.preventDefault()
         submit()
@@ -17,7 +26,7 @@ export default function Form(props) {
 
 
     return (
-        <div className='form-container'>
+        <div className='form-container' onSubmit={onSubmit}>
             <div className='form-inputs'>
                 <label>Name
                     <input
